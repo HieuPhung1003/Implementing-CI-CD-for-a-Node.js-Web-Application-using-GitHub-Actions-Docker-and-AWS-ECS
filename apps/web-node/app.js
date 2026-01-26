@@ -1,27 +1,39 @@
-// const express = require('express');
-// const app = express();
-// const PORT = process.env.PORT || 3000;
-
-// app.get('/', (req, res) => res.send('Hello World from CI/CD pipeline!'));
-
-// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-// app.js
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
-// web mới
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: true }));
+
+let posts = [
+  { id: 1, title: "Welcome to My Blog", content: "This is your first post!" }
+];
+
+// Trang chủ
 app.get('/', (req, res) => {
-  res.send(`
-    <h1>Website mới đã được triển khai tự động!</h1>
-    <p>Triển khai CI/CD với Docker + AWS ECS thành công 🎉</p>
-  `);
+  res.render('index', { posts });
 });
 
-// thêm route phụ
-app.get('/about', (req, res) => {
-  res.send('Đây là trang About của web mới.');
+// Trang tạo bài viết
+app.get('/new', (req, res) => {
+  res.render('new');
+});
+
+// Xử lý form tạo bài viết
+app.post('/new', (req, res) => {
+  const { title, content } = req.body;
+  const id = posts.length + 1;
+  posts.push({ id, title, content });
+  res.redirect('/');
+});
+
+// Xem bài viết
+app.get('/post/:id', (req, res) => {
+  const post = posts.find(p => p.id == req.params.id);
+  if (!post) return res.status(404).send('Post not found');
+  res.render('post', { post });
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
