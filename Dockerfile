@@ -11,6 +11,9 @@ COPY apps/web-node/package*.json ./
 RUN npm install
 # RUN npm ci --only=production
 
+# Tạo Prisma client
+RUN npx prisma generate
+
 # Copy toàn bộ source code
 COPY apps/web-node ./
 
