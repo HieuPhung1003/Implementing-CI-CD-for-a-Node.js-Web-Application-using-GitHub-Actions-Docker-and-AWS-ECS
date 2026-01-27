@@ -1,17 +1,29 @@
 {
-  "name": "webapp-ci-cd",
+  "name": "node-web-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"No tests yet\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benadeja/nodejs.git"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Jaco Benade",
   "license": "ISC",
-  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/benadeja/nodejs/issues"
+  },
+  "homepage": "https://github.com/benadeja/nodejs#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "body-parser": "^2.2.2",
+    "express": "^4.16.4",
+    "hbs": "^4.0.1"
   }
 }

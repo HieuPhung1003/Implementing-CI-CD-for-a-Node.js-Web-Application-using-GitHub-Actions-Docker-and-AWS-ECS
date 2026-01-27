@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{pageTitle}}</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .btn { padding: 5px 10px; text-decoration: none; color: white; border-radius: 4px; }
+        .btn-edit { background-color: #4CAF50; }
+        .btn-delete { background-color: #f44336; }
+        .btn-add { display: inline-block; margin-top: 10px; background-color: #008CBA; padding: 10px 20px; color: white; text-decoration: none;}
+    </style>
+</head>
+<body>
+    {{> header}}
+
+    <h2>Danh sách hàng hóa hiện có</h2>
+    
+    {{#if hasProducts}}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Danh mục</th>
+                    <th>Số lượng</th>
+                    <th>Giá (VNĐ)</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each products}}
+                <tr>
+                    <td>{{this.id}}</td>
+                    <td>{{this.name}}</td>
+                    <td>{{this.category}}</td>
+                    <td>{{this.quantity}}</td>
+                    <td>{{this.price}}</td>
+                    <td>
+                        <a href="/inventory/edit/{{this.id}}" class="btn btn-edit">Sửa</a>
+                        <a href="/inventory/delete/{{this.id}}" class="btn btn-delete" onclick="return confirm('Bạn chắc chắn muốn xóa?');">Xóa</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    {{else}}
+        <p>Kho đang trống. Hãy nhập hàng ngay!</p>
+    {{/if}}
+
+    <br>
+    <a href="/inventory/add" class="btn-add">+ Nhập thêm hàng hóa</a>
+
+    {{> footer}}
+</body>
+</html>

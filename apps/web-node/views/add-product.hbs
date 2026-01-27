@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{pageTitle}}</title>
+</head>
+<body>
+    {{> header}}
+    
+    <h2>Nhập thông tin sản phẩm</h2>
+    <form action="/inventory/add" method="POST">
+        <p>
+            <label>Tên sản phẩm:</label><br>
+            <input type="text" name="name" required>
+        </p>
+        <p>
+            <label>Danh mục:</label><br>
+            <input type="text" name="category">
+        </p>
+        <p>
+            <label>Số lượng:</label><br>
+            <input type="number" name="quantity" required>
+        </p>
+        <p>
+            <label>Giá bán:</label><br>
+            <input type="number" name="price" required>
+        </p>
+        <button type="submit">Lưu vào kho</button>
+    </form>
+
+    {{> footer}}
+</body>
+</html>
