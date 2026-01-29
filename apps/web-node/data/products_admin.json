@@ -1,0 +1,65 @@
+[
+  {
+    "id": 2,
+    "name": "gg",
+    "category": "Điện tử",
+    "quantity": 31,
+    "price": 5555,
+    "supplier": "N/A",
+    "minStock": 5
+  },
+  {
+    "id": 3,
+    "name": "Laptop Dell XPS",
+    "category": "Điện tử",
+    "quantity": 14,
+    "price": 1,
+    "supplier": "N/A",
+    "minStock": 5
+  },
+  {
+    "id": 4,
+    "name": "Laptop Dell XPS",
+    "category": "Điện tử",
+    "quantity": 7,
+    "price": 1,
+    "supplier": "N/A",
+    "minStock": 5
+  },
+  {
+    "id": 5,
+    "name": "gg",
+    "category": "Điện tử",
+    "quantity": 39,
+    "price": 5555,
+    "supplier": "N/A",
+    "minStock": 5
+  },
+  {
+    "id": 6,
+    "name": "gg",
+    "category": "Điện tử",
+    "quantity": 39,
+    "price": 5555,
+    "supplier": "N/A",
+    "minStock": 5
+  },
+  {
+    "id": 7,
+    "name": "fasdfasdf",
+    "category": "Điện tử",
+    "quantity": 6,
+    "price": 300,
+    "supplier": "N/A",
+    "minStock": 5
+  },
+  {
+    "id": 8,
+    "name": "thanhprone",
+    "category": "Điện tử",
+    "quantity": 5,
+    "price": 4,
+    "supplier": "N/A",
+    "minStock": 5
+  }
+]

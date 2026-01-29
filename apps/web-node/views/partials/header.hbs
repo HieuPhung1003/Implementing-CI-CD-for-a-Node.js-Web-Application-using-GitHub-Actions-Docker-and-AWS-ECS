@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>{{pageTitle}}</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">WebInventory</div>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Trang chủ</a>
+                <a href="/about" class="nav-link">Giới thiệu</a>
+
+                {{#if user}}
+                <a href="/inventory" class="nav-link">Kho hàng</a>
+                <a href="/history" class="nav-link">Lịch sử</a>
+                <a href="/logout" class="nav-link" style="color: #f87171;">Đăng xuất ({{user.username}})</a>
+                {{else}}
+                <a href="/login" class="nav-link btn btn-primary" style="padding: 0.5rem 1rem; color: white;">Đăng
+                    nhập</a>
+                {{/if}}
+            </div>
+        </nav>
+    </header>

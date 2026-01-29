@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1769707679718,
+    "date": "2026-01-29T17:27:59.718Z",
+    "action": "IMPORT",
+    "productId": "NEW",
+    "productName": "thanhprone",
+    "quantityChange": 4,
+    "note": "Nhập hàng mới"
+  },
+  {
+    "id": 1769707727739,
+    "date": "2026-01-29T17:28:47.739Z",
+    "action": "IMPORT",
+    "productId": "NEW",
+    "productName": "thanhprone",
+    "quantityChange": 4,
+    "note": "Nhập hàng mới"
+  },
+  {
+    "id": 1769707738699,
+    "date": "2026-01-29T17:28:58.699Z",
+    "action": "IMPORT",
+    "productId": "NEW",
+    "productName": "thanhprone",
+    "quantityChange": 4,
+    "note": "Nhập hàng mới"
+  }
+]

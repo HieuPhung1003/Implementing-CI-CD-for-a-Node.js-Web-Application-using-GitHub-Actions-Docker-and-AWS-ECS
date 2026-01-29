@@ -1,0 +1,95 @@
+{{> header}}
+
+<div class="hero">
+  <h1>{{pageTitle}}</h1>
+  <p>{{welcomeMessage}}</p>
+
+  <div style="margin-top: 2rem;">
+    <a href="/inventory" class="btn btn-primary">Xem Kho Hàng</a>
+    <a href="/about" class="btn btn-secondary">Về Chúng Tôi</a>
+  </div>
+</div>
+
+<div class="container">
+  <div
+    style="display: flex;  gap: 1.5rem; margin-bottom: 2rem;">
+    <div class="glass-pane text-center" style="padding: 1.5rem;">
+      <h3 style="margin: 0; color: var(--text-muted); font-size: 1rem;">Tổng sản phẩm</h3>
+      <p style="font-size: 2.5rem; font-weight: 700; margin: 0.5rem 0; color: var(--primary-color);">
+        {{stats.totalProducts}}</p>
+    </div>
+    <div class="glass-pane text-center" style="padding: 1.5rem;">
+      <h3 style="margin: 0; color: var(--text-muted); font-size: 1rem;">Tổng giá trị kho</h3>
+      <p style="font-size: 2.5rem; font-weight: 700; margin: 0.5rem 0; color: #10b981;">{{stats.totalValue}} đ</p>
+    </div>
+    <div class="glass-pane text-center" style="padding: 1.5rem;">
+      <h3 style="margin: 0; color: var(--text-muted); font-size: 1rem;">Sắp hết hàng</h3>
+      <p style="font-size: 2.5rem; font-weight: 700; margin: 0.5rem 0; color: #ef4444;">{{stats.lowStockCount}}</p>
+    </div>
+  </div>
+</div>
+
+{{#if user}}
+<div class="container" style="margin-bottom: 2rem;">
+  <div class="chart-container" data-inventory='{{{productChartJSON}}}'>
+    <h3 style="margin-bottom: 1.5rem; text-align: center;">Số lượng từng loại hàng</h3>
+    <div style="position: relative; height: 400px;">
+      <canvas id="productInventoryChart"></canvas>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const ctx = document.getElementById('productInventoryChart').getContext('2d');
+    try {
+      const dataStr = document.querySelector('[data-inventory]').dataset.inventory;
+      const productChart = JSON.parse(dataStr);
+
+      console.log('Parsed productChart:', productChart);
+      new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: Object.keys(productChart),
+        datasets: [{
+          label: 'Số lượng tồn kho',
+          data: Object.values(productChart),
+          backgroundColor: 'rgba(59, 130, 246, 0.6)',
+          borderColor: 'rgba(59, 130, 246, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: true }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: { color: 'rgba(255, 255, 255, 0.1)' },
+            ticks: { color: '#9ca3af' }
+          },
+          x: {
+            grid: { display: false },
+            ticks: { color: '#9ca3af' }
+          }
+        }
+      }
+    });
+    } catch(error) {
+      console.error('Error parsing productInventory:', error);
+    }
+  });
+</script>
+{{/if}}
+
+<div class="chart-container" style="max-width: 800px; margin: 0 auto; text-align: center;">
+  <h2>Quản lý kho hàng hiệu quả</h2>
+  <p style="color: var(--text-muted);">Hệ thống cho phép bạn theo dõi, thêm mới và cập nhật trạng thái hàng hóa trong
+    thời gian thực.</p>
+</div>
+
+{{> footer}}

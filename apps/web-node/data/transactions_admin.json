@@ -1,0 +1,524 @@
+[
+  {
+    "id": 1769708027363,
+    "date": "2026-01-29T17:33:47.363Z",
+    "action": "IMPORT",
+    "productId": "NEW",
+    "productName": "thanhprone",
+    "quantityChange": 4,
+    "note": "Nhập hàng mới"
+  },
+  {
+    "id": 1769708031218,
+    "date": "2026-01-29T17:33:51.218Z",
+    "action": "IMPORT",
+    "productId": 1,
+    "productName": "thanhprone",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769708031964,
+    "date": "2026-01-29T17:33:51.964Z",
+    "action": "IMPORT",
+    "productId": 1,
+    "productName": "thanhprone",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769708829235,
+    "date": "2026-01-29T17:47:09.235Z",
+    "action": "IMPORT",
+    "productId": "NEW",
+    "productName": "gg",
+    "quantityChange": 333,
+    "note": "Nhập hàng mới"
+  },
+  {
+    "id": 1769708839626,
+    "date": "2026-01-29T17:47:19.627Z",
+    "action": "IMPORT",
+    "productId": "NEW",
+    "productName": "Laptop Dell XPS",
+    "quantityChange": 1,
+    "note": "Nhập hàng mới"
+  },
+  {
+    "id": 1769712373939,
+    "date": "2026-01-29T18:46:13.939Z",
+    "action": "IMPORT",
+    "productId": "NEW",
+    "productName": "Laptop Dell XPS",
+    "quantityChange": 1,
+    "note": "Nhập hàng mới"
+  },
+  {
+    "id": 1769712378821,
+    "date": "2026-01-29T18:46:18.821Z",
+    "action": "IMPORT",
+    "productId": 1,
+    "productName": "thanhprone",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712379029,
+    "date": "2026-01-29T18:46:19.029Z",
+    "action": "IMPORT",
+    "productId": 1,
+    "productName": "thanhprone",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712379334,
+    "date": "2026-01-29T18:46:19.334Z",
+    "action": "IMPORT",
+    "productId": 1,
+    "productName": "thanhprone",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712379524,
+    "date": "2026-01-29T18:46:19.524Z",
+    "action": "IMPORT",
+    "productId": 1,
+    "productName": "thanhprone",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712379870,
+    "date": "2026-01-29T18:46:19.870Z",
+    "action": "IMPORT",
+    "productId": 1,
+    "productName": "thanhprone",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712380035,
+    "date": "2026-01-29T18:46:20.035Z",
+    "action": "IMPORT",
+    "productId": 1,
+    "productName": "thanhprone",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712380338,
+    "date": "2026-01-29T18:46:20.338Z",
+    "action": "IMPORT",
+    "productId": 1,
+    "productName": "thanhprone",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712380654,
+    "date": "2026-01-29T18:46:20.654Z",
+    "action": "IMPORT",
+    "productId": 1,
+    "productName": "thanhprone",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712380954,
+    "date": "2026-01-29T18:46:20.954Z",
+    "action": "IMPORT",
+    "productId": 1,
+    "productName": "thanhprone",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712381114,
+    "date": "2026-01-29T18:46:21.114Z",
+    "action": "IMPORT",
+    "productId": 1,
+    "productName": "thanhprone",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712381445,
+    "date": "2026-01-29T18:46:21.445Z",
+    "action": "IMPORT",
+    "productId": 1,
+    "productName": "thanhprone",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712381756,
+    "date": "2026-01-29T18:46:21.756Z",
+    "action": "IMPORT",
+    "productId": 1,
+    "productName": "thanhprone",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712381923,
+    "date": "2026-01-29T18:46:21.923Z",
+    "action": "IMPORT",
+    "productId": 1,
+    "productName": "thanhprone",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712384447,
+    "date": "2026-01-29T18:46:24.447Z",
+    "action": "EXPORT",
+    "productId": 2,
+    "productName": "gg",
+    "quantityChange": -1,
+    "note": "Xuất nhanh"
+  },
+  {
+    "id": 1769712384676,
+    "date": "2026-01-29T18:46:24.676Z",
+    "action": "EXPORT",
+    "productId": 2,
+    "productName": "gg",
+    "quantityChange": -1,
+    "note": "Xuất nhanh"
+  },
+  {
+    "id": 1769712385035,
+    "date": "2026-01-29T18:46:25.035Z",
+    "action": "EXPORT",
+    "productId": 2,
+    "productName": "gg",
+    "quantityChange": -1,
+    "note": "Xuất nhanh"
+  },
+  {
+    "id": 1769712385361,
+    "date": "2026-01-29T18:46:25.361Z",
+    "action": "EXPORT",
+    "productId": 2,
+    "productName": "gg",
+    "quantityChange": -1,
+    "note": "Xuất nhanh"
+  },
+  {
+    "id": 1769712385709,
+    "date": "2026-01-29T18:46:25.709Z",
+    "action": "EXPORT",
+    "productId": 2,
+    "productName": "gg",
+    "quantityChange": -1,
+    "note": "Xuất nhanh"
+  },
+  {
+    "id": 1769712386041,
+    "date": "2026-01-29T18:46:26.041Z",
+    "action": "EXPORT",
+    "productId": 2,
+    "productName": "gg",
+    "quantityChange": -1,
+    "note": "Xuất nhanh"
+  },
+  {
+    "id": 1769712386391,
+    "date": "2026-01-29T18:46:26.391Z",
+    "action": "EXPORT",
+    "productId": 2,
+    "productName": "gg",
+    "quantityChange": -1,
+    "note": "Xuất nhanh"
+  },
+  {
+    "id": 1769712386558,
+    "date": "2026-01-29T18:46:26.558Z",
+    "action": "EXPORT",
+    "productId": 2,
+    "productName": "gg",
+    "quantityChange": -1,
+    "note": "Xuất nhanh"
+  },
+  {
+    "id": 1769712386912,
+    "date": "2026-01-29T18:46:26.912Z",
+    "action": "EXPORT",
+    "productId": 2,
+    "productName": "gg",
+    "quantityChange": -1,
+    "note": "Xuất nhanh"
+  },
+  {
+    "id": 1769712387242,
+    "date": "2026-01-29T18:46:27.242Z",
+    "action": "EXPORT",
+    "productId": 2,
+    "productName": "gg",
+    "quantityChange": -1,
+    "note": "Xuất nhanh"
+  },
+  {
+    "id": 1769712387579,
+    "date": "2026-01-29T18:46:27.579Z",
+    "action": "EXPORT",
+    "productId": 2,
+    "productName": "gg",
+    "quantityChange": -1,
+    "note": "Xuất nhanh"
+  },
+  {
+    "id": 1769712387893,
+    "date": "2026-01-29T18:46:27.893Z",
+    "action": "EXPORT",
+    "productId": 2,
+    "productName": "gg",
+    "quantityChange": -1,
+    "note": "Xuất nhanh"
+  },
+  {
+    "id": 1769712388060,
+    "date": "2026-01-29T18:46:28.060Z",
+    "action": "EXPORT",
+    "productId": 2,
+    "productName": "gg",
+    "quantityChange": -1,
+    "note": "Xuất nhanh"
+  },
+  {
+    "id": 1769712388412,
+    "date": "2026-01-29T18:46:28.412Z",
+    "action": "EXPORT",
+    "productId": 2,
+    "productName": "gg",
+    "quantityChange": -1,
+    "note": "Xuất nhanh"
+  },
+  {
+    "id": 1769712388753,
+    "date": "2026-01-29T18:46:28.753Z",
+    "action": "EXPORT",
+    "productId": 2,
+    "productName": "gg",
+    "quantityChange": -1,
+    "note": "Xuất nhanh"
+  },
+  {
+    "id": 1769712397336,
+    "date": "2026-01-29T18:46:37.336Z",
+    "action": "IMPORT",
+    "productId": 3,
+    "productName": "Laptop Dell XPS",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712397669,
+    "date": "2026-01-29T18:46:37.669Z",
+    "action": "IMPORT",
+    "productId": 3,
+    "productName": "Laptop Dell XPS",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712397849,
+    "date": "2026-01-29T18:46:37.849Z",
+    "action": "IMPORT",
+    "productId": 3,
+    "productName": "Laptop Dell XPS",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712398029,
+    "date": "2026-01-29T18:46:38.029Z",
+    "action": "IMPORT",
+    "productId": 3,
+    "productName": "Laptop Dell XPS",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712398225,
+    "date": "2026-01-29T18:46:38.225Z",
+    "action": "IMPORT",
+    "productId": 3,
+    "productName": "Laptop Dell XPS",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712398414,
+    "date": "2026-01-29T18:46:38.414Z",
+    "action": "IMPORT",
+    "productId": 3,
+    "productName": "Laptop Dell XPS",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712398604,
+    "date": "2026-01-29T18:46:38.604Z",
+    "action": "IMPORT",
+    "productId": 3,
+    "productName": "Laptop Dell XPS",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712398957,
+    "date": "2026-01-29T18:46:38.957Z",
+    "action": "IMPORT",
+    "productId": 3,
+    "productName": "Laptop Dell XPS",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712399143,
+    "date": "2026-01-29T18:46:39.143Z",
+    "action": "IMPORT",
+    "productId": 3,
+    "productName": "Laptop Dell XPS",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712399508,
+    "date": "2026-01-29T18:46:39.508Z",
+    "action": "IMPORT",
+    "productId": 3,
+    "productName": "Laptop Dell XPS",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712399666,
+    "date": "2026-01-29T18:46:39.666Z",
+    "action": "IMPORT",
+    "productId": 3,
+    "productName": "Laptop Dell XPS",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712399839,
+    "date": "2026-01-29T18:46:39.839Z",
+    "action": "IMPORT",
+    "productId": 3,
+    "productName": "Laptop Dell XPS",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712400011,
+    "date": "2026-01-29T18:46:40.011Z",
+    "action": "IMPORT",
+    "productId": 3,
+    "productName": "Laptop Dell XPS",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712400694,
+    "date": "2026-01-29T18:46:40.694Z",
+    "action": "IMPORT",
+    "productId": 4,
+    "productName": "Laptop Dell XPS",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712401042,
+    "date": "2026-01-29T18:46:41.042Z",
+    "action": "IMPORT",
+    "productId": 4,
+    "productName": "Laptop Dell XPS",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712401226,
+    "date": "2026-01-29T18:46:41.226Z",
+    "action": "IMPORT",
+    "productId": 4,
+    "productName": "Laptop Dell XPS",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712401410,
+    "date": "2026-01-29T18:46:41.410Z",
+    "action": "IMPORT",
+    "productId": 4,
+    "productName": "Laptop Dell XPS",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712401591,
+    "date": "2026-01-29T18:46:41.591Z",
+    "action": "IMPORT",
+    "productId": 4,
+    "productName": "Laptop Dell XPS",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769712401940,
+    "date": "2026-01-29T18:46:41.940Z",
+    "action": "IMPORT",
+    "productId": 4,
+    "productName": "Laptop Dell XPS",
+    "quantityChange": 1,
+    "note": "Nhập nhanh"
+  },
+  {
+    "id": 1769717483555,
+    "date": "2026-01-29T20:11:23.555Z",
+    "action": "IMPORT",
+    "productId": "NEW",
+    "productName": "gg",
+    "quantityChange": 39,
+    "note": "Nhập hàng mới"
+  },
+  {
+    "id": 1769719246717,
+    "date": "2026-01-29T20:40:46.717Z",
+    "action": "DELETE",
+    "productId": 1,
+    "productName": "thanhprone",
+    "quantityChange": -19,
+    "note": "Xóa sản phẩm"
+  },
+  {
+    "id": 1769719262003,
+    "date": "2026-01-29T20:41:02.003Z",
+    "action": "IMPORT",
+    "productId": "NEW",
+    "productName": "gg",
+    "quantityChange": 39,
+    "note": "Nhập hàng mới"
+  },
+  {
+    "id": 1769721657840,
+    "date": "2026-01-29T21:20:57.840Z",
+    "action": "IMPORT",
+    "productId": "NEW",
+    "productName": "fasdfasdf",
+    "quantityChange": 6,
+    "note": "Nhập hàng mới"
+  },
+  {
+    "id": 1769721784199,
+    "date": "2026-01-29T21:23:04.199Z",
+    "action": "IMPORT",
+    "productId": "NEW",
+    "productName": "thanhprone",
+    "quantityChange": 5,
+    "note": "Nhập hàng mới"
+  }
+]
