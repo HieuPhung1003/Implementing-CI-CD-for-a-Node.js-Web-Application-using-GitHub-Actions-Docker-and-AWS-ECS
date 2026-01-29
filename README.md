@@ -28,3 +28,37 @@
 | **Triển khai container** | AWS ECS *(Elastic Container Service - Fargate)* | Chạy container trên môi trường Cloud không cần quản lý server. | 
 | **Giám sát hệ thống** | AWS CloudWatch | Theo dõi log và trạng thái container sau khi triển khai. | 
 | **Bảo mật truy cập** | AWS IAM + GitHub Secrets | Bảo mật thông tin đăng nhập và quyền truy cập các dịch vụ Cloud. |
+
+## System Architecture Diagram
+
+```mermaid
+flowchart TB
+    subgraph Dev[Developer / GitHub Repository]
+        A1[Commit & Push Code] --> A2[GitHub Actions Workflow]
+    end
+
+    subgraph CI[Continuous Integration - GitHub Actions]
+        A2 --> B1[Build Docker Image]
+        B1 --> B2[Tag Image with 'latest']
+        B2 --> B3[Push to Amazon ECR]
+    end
+
+    subgraph AWS[AWS Cloud]
+        B3 -->|New image pushed| C1[ECR Repository]
+        C1 -->|Triggers new deployment| D1[ECS Cluster]
+        D1 --> D2[ECS Service]
+        D2 --> D3[ECS Task (Fargate Container)]
+    end
+
+    subgraph Runtime[Running Application]
+        D3 -->|Serve HTTP traffic| E1[Public IP / ALB]
+        E1 --> F1[End User Browser]
+    end
+
+    %% Styles
+    classDef aws fill:#F2F7FF,stroke:#0073BB,stroke-width:1px;
+    classDef github fill:#FFF8F2,stroke:#FF9900,stroke-width:1px;
+    classDef runtime fill:#F9FFF2,stroke:#4CAF50,stroke-width:1px;
+    class Dev,CI,AWS,Runtime aws;
+    class A1,A2,B1,B2,B3 github;
+    class D3,E1,F1 runtime;
