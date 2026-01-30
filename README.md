@@ -35,10 +35,10 @@ Pipeline được điều khiển bởi *GitHub Actions*, sử dụng *Docker*, 
 
 ---
 
-### 🖼️ Sơ đồ kiến trúc hệ thống
+### Sơ đồ kiến trúc hệ thống
 
 <p align="center">
-  <img src="port3000.png" alt="Kiến trúc hệ thống CI/CD AWS ECS" width="750">
+  <img src="docs/structer_aws.png" alt="Kiến trúc hệ thống CI/CD AWS ECS" width="750">
 </p>
 
 <p align="center"><em>Hình 1 – Kiến trúc hệ thống CI/CD triển khai ứng dụng Node.js trên AWS ECS Fargate</em></p>
