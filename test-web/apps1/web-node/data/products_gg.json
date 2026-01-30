@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "name": "gg",
+    "category": "Gia dụng",
+    "quantity": 333,
+    "price": 5555,
+    "supplier": "N/A",
+    "minStock": 5
+  }
+]

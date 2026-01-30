@@ -1,0 +1,241 @@
+{{> header}}
+
+{{#if user}}
+<!-- Dashboard for logged-in users -->
+<div class="container">
+  <div class="dashboard-header">
+    <h1 class="dashboard-title">Bảng điều khiển kho hàng</h1>
+    <p class="dashboard-subtitle">Xin chào, <strong>{{user.username}}</strong>! Đây là thống kê tổng hợp hôm nay.</p>
+  </div>
+
+  <!-- Stats Cards -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-icon" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+        </svg>
+      </div>
+      <div class="stat-content">
+        <h3 class="stat-label">Tổng sản phẩm</h3>
+        <p class="stat-value">{{stats.totalProducts}}</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="12" y1="1" x2="12" y2="23"></line>
+          <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+        </svg>
+      </div>
+      <div class="stat-content">
+        <h3 class="stat-label">Giá trị kho hàng</h3>
+        <p class="stat-value">{{stats.totalValue}} đ</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+        </svg>
+      </div>
+      <div class="stat-content">
+        <h3 class="stat-label">Sắp hết hàng</h3>
+        <p class="stat-value alert">{{stats.lowStockCount}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Inventory Chart -->
+  <div class="container">
+    <div class="chart-container" data-inventory='{{{productChartJSON}}}'>
+      <h3 class="chart-title">Số lượng tồn kho theo danh mục</h3>
+      <div style="position: relative; height: 400px;">
+        <canvas id="productInventoryChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Links -->
+  <div class="container">
+    <div class="quick-links-section">
+      <h3 class="section-title">Các tác vụ nhanh</h3>
+      <div class="quick-links">
+        <a href="/inventory" class="quick-link-card">
+          <span class="quick-link-icon">📦</span>
+          <span class="quick-link-text">Xem kho hàng</span>
+        </a>
+        <a href="/inventory/add" class="quick-link-card">
+          <span class="quick-link-icon">➕</span>
+          <span class="quick-link-text">Nhập hàng mới</span>
+        </a>
+        <a href="/history" class="quick-link-card">
+          <span class="quick-link-icon">📋</span>
+          <span class="quick-link-text">Xem lịch sử</span>
+        </a>
+        <a href="/inventory/export" class="quick-link-card" target="_blank">
+          <span class="quick-link-icon">⬇️</span>
+          <span class="quick-link-text">Xuất dữ liệu</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const ctx = document.getElementById('productInventoryChart');
+      if (!ctx) return;
+      
+      try {
+        const dataStr = document.querySelector('[data-inventory]').dataset.inventory;
+        const productChart = JSON.parse(dataStr);
+
+        new Chart(ctx.getContext('2d'), {
+          type: 'bar',
+          data: {
+            labels: Object.keys(productChart),
+            datasets: [{
+              label: 'Số lượng tồn kho',
+              data: Object.values(productChart),
+              backgroundColor: [
+                'rgba(99, 102, 241, 0.6)',
+                'rgba(236, 72, 153, 0.6)',
+                'rgba(16, 185, 129, 0.6)',
+                'rgba(59, 130, 246, 0.6)',
+                'rgba(245, 158, 11, 0.6)'
+              ],
+              borderColor: [
+                'rgba(99, 102, 241, 1)',
+                'rgba(236, 72, 153, 1)',
+                'rgba(16, 185, 129, 1)',
+                'rgba(59, 130, 246, 1)',
+                'rgba(245, 158, 11, 1)'
+              ],
+              borderWidth: 2,
+              borderRadius: 8
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { 
+                display: true,
+                labels: { color: '#94a3b8' }
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                ticks: { color: '#9ca3af' }
+              },
+              x: {
+                grid: { display: false },
+                ticks: { color: '#9ca3af' }
+              }
+            }
+          }
+        });
+      } catch(error) {
+        console.error('Error loading chart:', error);
+      }
+    });
+  </script>
+
+{{else}}
+<!-- Hero Section for Guests -->
+<div class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">Quản Lý Kho Hàng Thông Minh</h1>
+      <p class="hero-description">Hệ thống quản lý kho hàng hiệu quả với giao diện thân thiện, theo dõi tồn kho theo thời gian thực.</p>
+      
+      <div class="hero-buttons">
+        <a href="/login" class="btn btn-primary btn-large">
+          <span>🔐 Đăng Nhập</span>
+        </a>
+        <a href="/register" class="btn btn-secondary btn-large">
+          <span>✍️ Đăng Ký</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Features Section -->
+<div class="container">
+  <div class="features-section">
+    <h2 class="section-title">Tính năng nổi bật</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">
+          📊
+        </div>
+        <h3>Thống kê chi tiết</h3>
+        <p>Xem tổng quan tồn kho, giá trị hàng hóa và các cảnh báo sắp hết hàng</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+          🎯
+        </div>
+        <h3>Quản lý nhanh</h3>
+        <p>Thêm, sửa, xóa sản phẩm với giao diện đơn giản và trực quan</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
+          📝
+        </div>
+        <h3>Lịch sử giao dịch</h3>
+        <p>Theo dõi toàn bộ lịch sử nhập/xuất hàng với ghi chú chi tiết</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+          👥
+        </div>
+        <h3>Đa người dùng</h3>
+        <p>Mỗi người dùng có kho hàng riêng với dữ liệu hoàn toàn độc lập</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
+          📥
+        </div>
+        <h3>Xuất dữ liệu</h3>
+        <p>Xuất toàn bộ danh sách hàng hóa ra file CSV để sử dụng ngoài</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background: linear-gradient(135deg, #8b5cf6, #6366f1);">
+          🔒
+        </div>
+        <h3>Bảo mật</h3>
+        <p>Mật khẩu được mã hóa bằng bcryptjs, phiên đăng nhập an toàn</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA Section -->
+<div class="container">
+  <div class="cta-section">
+    <div class="cta-content">
+      <h2>Sẵn sàng bắt đầu?</h2>
+      <p>Tạo tài khoản miễn phí ngay hôm nay và quản lý kho hàng của bạn</p>
+      <a href="/register" class="btn btn-primary btn-large">Đăng Ký Ngay</a>
+    </div>
+  </div>
+</div>
+
+{{/if}}
+
+{{> footer}}

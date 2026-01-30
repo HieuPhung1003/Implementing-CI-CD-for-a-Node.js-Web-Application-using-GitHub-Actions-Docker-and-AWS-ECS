@@ -1,0 +1,313 @@
+{{> header}}
+
+<div class="container">
+    <div class="glass-pane">
+        <header class="inventory-header">
+            <div class="inventory-title">
+                <h1>📦 Danh sách hàng hóa</h1>
+                <p class="inventory-sub">Quản lý toàn bộ sản phẩm trong kho</p>
+            </div>
+            <div class="inventory-ctas">
+                <a href="/inventory/add" class="btn btn-primary btn-large">➕ Thêm hàng</a>
+                <a href="/inventory/export" class="btn btn-outline">⬇️ Xuất CSV</a>
+            </div>
+        </header>
+
+        {{#if message}}
+            <div class="notice notice-success">✅ {{message}}</div>
+        {{/if}}
+
+        {{#if products}}
+            
+
+            <div class="table-wrap">
+                <table class="inventory-table modern">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Sản phẩm</th>
+                            <th>Danh mục</th>
+                            <th>Nhà cung cấp</th>
+                            <th class="text-center">Số lượng</th>
+                            <th class="text-right">Giá</th>
+                            <th class="text-center">Tối thiểu</th>
+                            <th class="text-center">Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each products}}
+                        <tr>
+                            <td class="id">#{{this.id}}</td>
+                            <td class="name">{{this.name}}</td>
+                            <td class="category"><span class="badge">{{this.category}}</span></td>
+                            <td class="supplier">{{this.supplier}}</td>
+                            <td class="qty text-center">{{this.quantity}}</td>
+                            <td class="price text-right">{{this.price}} đ</td>
+                            <td class="min text-center">{{this.minStock}}</td>
+                            <td class="actions text-center">
+                                <a href="/inventory/edit/{{this.id}}" class="btn-icon">✏️</a>
+                                <a href="/inventory/delete/{{this.id}}" class="btn-icon btn-danger" onclick="return confirm('Xóa sản phẩm này?')">🗑️</a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        {{else}}
+            <div class="empty-state">
+                <div class="empty-emoji">📦</div>
+                <h3>Kho hàng trống</h3>
+                <p>Chưa có sản phẩm nào — thêm sản phẩm đầu tiên để bắt đầu.</p>
+                <a href="/inventory/add" class="btn btn-primary">➕ Thêm sản phẩm</a>
+            </div>
+        {{/if}}
+
+    </div>
+</div>
+
+{{> footer}}
+
+<style>
+/* Inventory scoped styles */
+.inventory-header { display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:1.25rem; }
+.inventory-title h1 { margin:0; font-size:1.9rem; background:linear-gradient(90deg,#6366f1,#ec4899); -webkit-background-clip:text; color:transparent; }
+.inventory-sub { margin:0.25rem 0 0; color:var(--text-muted); font-size:0.95rem; }
+.inventory-ctas { display:flex; gap:0.5rem; }
+.btn-large { padding:0.6rem 1rem; border-radius:0.6rem; }
+.btn-outline { background:transparent; border:1px solid var(--border-color); padding:0.5rem 0.9rem; border-radius:0.6rem; }
+.notice { padding:0.8rem 1rem; border-radius:0.6rem; margin-bottom:1rem; }
+.notice-success { background:rgba(16,185,129,0.08); border-left:4px solid #10b981; color:var(--text-color); }
+.inventory-stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1rem; margin-bottom:1rem; }
+.stat { display:flex; gap:0.75rem; align-items:center; padding:0.9rem; background:rgba(99,102,241,0.04); border-radius:0.6rem; border:1px solid var(--border-color); }
+.stat-icon { width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.2rem; }
+.stat-body .stat-label { color:var(--text-muted); font-size:0.8rem; text-transform:uppercase; }
+.stat-value { font-weight:700; font-size:1.1rem; }
+.table-wrap { overflow-x:auto; border-radius:0.6rem; border:1px solid var(--border-color); margin-top:0.6rem; }
+.inventory-table { width:100%; border-collapse:collapse; }
+.inventory-table thead { background:rgba(99,102,241,0.06); }
+.inventory-table th, .inventory-table td { padding:0.85rem 1rem; text-align:left; }
+.inventory-table th { font-size:0.78rem; color:#a5b4fc; text-transform:uppercase; letter-spacing:0.04em; }
+.inventory-table tr { border-bottom:1px solid var(--border-color); transition:background 0.15s ease; }
+.inventory-table tr:hover { background:rgba(99,102,241,0.03); }
+.badge { display:inline-block; padding:0.35rem 0.6rem; border-radius:999px; background:rgba(168,85,247,0.12); color:#7c3aed; font-weight:600; }
+.text-center { text-align:center; }
+.text-right { text-align:right; }
+.btn-icon { display:inline-flex; align-items:center; justify-content:center; width:38px; height:34px; border-radius:6px; background:rgba(99,102,241,0.06); border:1px solid rgba(99,102,241,0.12); text-decoration:none; color:inherit; }
+.btn-icon.btn-danger { background:rgba(239,68,68,0.06); border-color:rgba(239,68,68,0.12); }
+.empty-state { text-align:center; padding:2.5rem 1rem; }
+.empty-emoji { font-size:3.5rem; margin-bottom:0.75rem; opacity:0.6; }
+
+@media (max-width:768px) {
+    .inventory-header { flex-direction:column; align-items:flex-start; gap:0.5rem; }
+    .inventory-ctas { width:100%; }
+    .inventory-table th, .inventory-table td { padding:0.6rem 0.6rem; font-size:0.92rem; }
+}
+</style>
+
+<style>
+    .inventory-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .inventory-title {
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    .inventory-subtitle {
+        margin: 0.5rem 0 0 0;
+        color: var(--text-muted);
+    }
+
+    .inventory-actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .search-section {
+        margin-bottom: 2rem;
+    }
+
+    .search-container {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .search-input {
+        flex: 1;
+        min-width: 250px;
+    }
+
+    .inventory-table {
+        margin-top: 1.5rem;
+    }
+
+    .col-id { width: 60px; }
+    .col-name { width: 25%; }
+    .col-category { width: 15%; }
+    .col-quantity { width: 12%; }
+    .col-price { width: 12%; }
+    .col-actions { width: 10%; }
+
+    .product-row.low-stock {
+        background: rgba(239, 68, 68, 0.05);
+    }
+
+    .product-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .product-name {
+        color: var(--text-color);
+    }
+
+    .product-supplier {
+        color: var(--text-muted);
+    }
+
+    .category-badge {
+        display: inline-block;
+        background: rgba(99, 102, 241, 0.2);
+        color: #c7d2fe;
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+
+    .quantity-badge {
+        display: inline-block;
+        padding: 0.35rem 0.75rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+    .quantity-badge.available {
+        background: rgba(16, 185, 129, 0.2);
+        color: #86efac;
+    }
+
+    .quantity-badge.empty {
+        background: rgba(239, 68, 68, 0.2);
+        color: #fca5a5;
+    }
+
+    .stock-controls {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    .stock-form {
+        display: inline;
+        margin: 0;
+    }
+
+    .btn-sm {
+        padding: 0.35rem 0.65rem;
+        font-size: 0.85rem;
+    }
+
+    .action-buttons {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    .inventory-summary {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .summary-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(99, 102, 241, 0.1);
+        padding: 1rem;
+        border-radius: 0.5rem;
+    }
+
+    .summary-label {
+        color: var(--text-muted);
+    }
+
+    .summary-value {
+        font-weight: 700;
+        color: var(--primary-color);
+        font-size: 1.2rem;
+    }
+
+    .alert-badge {
+        background: rgba(239, 68, 68, 0.2);
+        color: #fca5a5;
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: 3rem 2rem;
+    }
+
+    .empty-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    .empty-state h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .empty-state p {
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        .inventory-header {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .inventory-actions {
+            width: 100%;
+        }
+
+        .inventory-actions .btn {
+            flex: 1;
+        }
+
+        .search-container {
+            flex-direction: column;
+        }
+
+        .search-input {
+            width: 100%;
+        }
+
+        .col-id { width: 50px; }
+        .col-name { width: 30%; }
+        .col-category { display: none; }
+        .col-price { display: none; }
+
+        .inventory-summary {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+{{> footer}}

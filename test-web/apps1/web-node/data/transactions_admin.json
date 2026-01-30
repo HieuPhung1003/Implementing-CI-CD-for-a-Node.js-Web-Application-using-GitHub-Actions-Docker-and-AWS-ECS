@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1769746444567,
+    "date": "2026-01-30T04:14:04.567Z",
+    "action": "IMPORT",
+    "productId": "NEW",
+    "productName": "Laptop Dell XPS",
+    "quantityChange": 5,
+    "note": "Nhập hàng mới"
+  },
+  {
+    "id": 1769747618221,
+    "date": "2026-01-30T04:33:38.221Z",
+    "action": "IMPORT",
+    "productId": "NEW",
+    "productName": "fasdfasdf",
+    "quantityChange": 6,
+    "note": "Nhập hàng mới"
+  }
+]
