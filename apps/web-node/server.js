@@ -79,7 +79,7 @@ app.get('/inventory/delete/:id', productController.deleteProduct);
 app.get('/history', productController.getHistory);
 
 // Khởi chạy server
-const port = 3000;
+const port = 80;
 app.listen(port, () => {
     console.log(`Server đang chạy tại: http://localhost:${port}`);
 });
