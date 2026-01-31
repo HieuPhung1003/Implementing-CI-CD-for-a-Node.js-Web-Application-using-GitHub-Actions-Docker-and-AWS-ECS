@@ -15,7 +15,7 @@ RUN npm install
 COPY apps/web-node ./
 
 # Expose port
-EXPOSE 3000
+EXPOSE 80
 
 # Lệnh chạy ứng dụng
 CMD ["npm", "start"]
