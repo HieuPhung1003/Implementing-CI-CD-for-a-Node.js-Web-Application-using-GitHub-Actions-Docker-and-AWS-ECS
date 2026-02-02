@@ -4,17 +4,17 @@
     <div class="glass-pane">
         <header class="inventory-header">
             <div class="inventory-title">
-                <h1>📦 Danh sách hàng hóa</h1>
+                <h1>Danh sách hàng hóa</h1>
                 <p class="inventory-sub">Quản lý toàn bộ sản phẩm trong kho</p>
             </div>
             <div class="inventory-ctas">
                 <a href="/inventory/add" class="btn btn-primary btn-large">➕ Thêm hàng</a>
-                <a href="/inventory/export" class="btn btn-outline">⬇️ Xuất CSV</a>
+                <a href="/inventory/export" class="btn btn-outline">⬇Xuất CSV</a>
             </div>
         </header>
 
         {{#if message}}
-            <div class="notice notice-success">✅ {{message}}</div>
+            <div class="notice notice-success">{{message}}</div>
         {{/if}}
 
         {{#if products}}
@@ -55,7 +55,6 @@
             </div>
         {{else}}
             <div class="empty-state">
-                <div class="empty-emoji">📦</div>
                 <h3>Kho hàng trống</h3>
                 <p>Chưa có sản phẩm nào — thêm sản phẩm đầu tiên để bắt đầu.</p>
                 <a href="/inventory/add" class="btn btn-primary">➕ Thêm sản phẩm</a>
